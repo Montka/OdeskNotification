@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-R:\WPF\LoginForm\LoginForm\obj\Debug\
+R:\WPF\LoginForm\obj\Debug\
 LoginForm
 none
 false
 DEBUG;TRACE
-R:\WPF\LoginForm\LoginForm\App.xaml
+R:\WPF\LoginForm\App.xaml
 2-381499501
 
-71506881868
-17-1532930370
+8-1393420883
+17-1163111115
 MainWindow.xaml;NotificationWindow.xaml;
 
-False
+True
 

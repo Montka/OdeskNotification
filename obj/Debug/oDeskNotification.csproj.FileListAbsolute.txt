@@ -1,0 +1,16 @@
+R:\WPF\LoginForm\bin\Debug\LoginForm.exe.config
+R:\WPF\LoginForm\bin\Debug\LoginForm.exe
+R:\WPF\LoginForm\bin\Debug\LoginForm.pdb
+R:\WPF\LoginForm\obj\Debug\MainWindow.baml
+R:\WPF\LoginForm\obj\Debug\MainWindow.g.cs
+R:\WPF\LoginForm\obj\Debug\NotificationWindow.g.cs
+R:\WPF\LoginForm\obj\Debug\App.g.cs
+R:\WPF\LoginForm\obj\Debug\GeneratedInternalTypeHelper.g.cs
+R:\WPF\LoginForm\obj\Debug\LoginForm_MarkupCompile.cache
+R:\WPF\LoginForm\obj\Debug\LoginForm_MarkupCompile.lref
+R:\WPF\LoginForm\obj\Debug\NotificationWindow.baml
+R:\WPF\LoginForm\obj\Debug\LoginForm.g.resources
+R:\WPF\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
+R:\WPF\LoginForm\obj\Debug\oDeskNotification.csproj.GenerateResource.Cache
+R:\WPF\LoginForm\obj\Debug\LoginForm.exe
+R:\WPF\LoginForm\obj\Debug\LoginForm.pdb

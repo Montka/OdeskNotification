@@ -65,7 +65,7 @@ SnapsToDevicePixels="True" TextOptions.TextFormattingMode="Display">
                         MouseLeftButtonDown="Icon_OnMouseLeftButtonDown"
                 >
                 </Image>
-                <TextBlock Text="2" FontSize="36"  Padding="0 0 35 0" Foreground="#6c6c6c" TextAlignment="Right" Grid.Column="1"></TextBlock>
+                <TextBlock Text="1" FontSize="36"  Padding="0 0 35 0" Foreground="#6c6c6c" TextAlignment="Right" Grid.Column="1"></TextBlock>
                 <Grid Grid.Row="1" Column="0" Margin="25 0 0 0">
                     <Grid.Background>
                             <LinearGradientBrush>
@@ -85,7 +85,7 @@ SnapsToDevicePixels="True" TextOptions.TextFormattingMode="Display">
                                 <Image Source="0001.png">
                                 </Image>
                             </Border>
-                            <Label HorizontalAlignment="Center" FontSize="16" Foreground="#3c3c3c">Maxim Montka</Label>
+                            <Label HorizontalAlignment="Center" FontSize="16" Foreground="#3c3c3c">Maxim</Label>
                             <Label HorizontalAlignment="Center" FontSize="12" Foreground="#3c3c3c">Qt Software Developer</Label>
                         </StackPanel>
                         </Border>
@@ -146,7 +146,7 @@ SnapsToDevicePixels="True" TextOptions.TextFormattingMode="Display">
 
                             <StackPanel Orientation="Horizontal" >
                                 <Image Source="1355054754_unlock.png" HorizontalAlignment="Left" Margin="15 1 1 1"></Image>
-                                <Label VerticalAlignment="Center" FontSize="14" Foreground="White"> Sign in </Label>
+                                <Label x:Name="ButtonActionText" VerticalAlignment="Center" FontSize="14" Foreground="White"> Sign in </Label>
                             </StackPanel>
                         </Border>
                     </StackPanel>

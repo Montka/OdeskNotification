@@ -68,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="JobParserClass.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,25 +122,20 @@
     <Resource Include="1355051979_Coffecup.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="1355051983_Cup_3_%28coffee_hot%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="1355052138_Coffecup.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1355052141_Cup_3_%28coffee_hot%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1355054764_preferences-desktop-cryptography.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="1355054754_unlock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="1355054753_Unlock.png" />
+    <Resource Include="back.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="hat.png" />
+    <Resource Include="12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1.png" />
+    <Resource Include="2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

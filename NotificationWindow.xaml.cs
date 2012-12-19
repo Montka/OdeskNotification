@@ -10,6 +10,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
+using System.Threading;
+using System.Windows.Threading;
+
+
 
 namespace LoginForm
 {
@@ -18,58 +23,80 @@ namespace LoginForm
     /// </summary>
     public partial class NotificationWindow : Window
     {
+        JobParserClass jobParserClass = new JobParserClass();
+        int position = 0;
         public NotificationWindow()
         {
             InitializeComponent();
-            
-            List.Items.Add(new { ImagePath = "pack://application:,,,/hat.png", Title = "What is next?", Skills = "123,123,123" });
-            List.Items.Add(new { ImagePath = "pack://application:,,,/hat.png", Title = "What is next?", Skills = "123,123,123" });
 
+            var t = jobParserClass.timelyJobs;
+            Title.Text = t.At(position).Title;
+            Description.Text = t.At(position).Description;
+            Type.Content = t.At(position).Type;
+            Amount.Content = t.At(position).Amount;
+
+            Timer tm = new Timer(Callback, null, TimeSpan.FromSeconds(420),
+                TimeSpan.FromSeconds(420));
+        }
+        private void Callback(object param)
+        {
+            Dispatcher.BeginInvoke(DispatcherPriority.Normal, (Action<string>)DoWork,
+            "some string");
+        }
+        void DoWork(string someArg)
+        {
+            if (jobParserClass._oauthAccessToken == null)
+                return;
+
+            Upate();
         }
         private void DragMove(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
-        private void List_OnSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            if (e.WidthChanged)
-            {
-                var view = List.View as GridView;
 
-                if (view != null)
-                {
-                    double width = List.ActualWidth / view.Columns.Count;
-
-                    view.Columns[0].Width = width;
-                }
-
-                //foreach (GridViewColumn col in view.Columns)
-            }
-
-           
-        }
         private void Icon_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var sb = (Storyboard)this.FindResource("FadeOutStoryboard");
+            sb.Begin();
         }
 
-        private void UIElement_OnMouseLeftButtonDown(object sender, MouseEventArgs e)
+        private void FadeOutStoryboard_Completed(object sender, EventArgs e)
         {
-            DependencyObject dep = (DependencyObject)e.OriginalSource;
-
-            while ((dep != null) && !(dep is ListViewItem))
-            {
-                dep = VisualTreeHelper.GetParent(dep);
-            }
-
-            if (dep == null)
-                return;
-
-            var item = List.ItemContainerGenerator.IndexFromContainer(dep);
-
-            
+            this.Close();
         }
 
+        private void MyWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            var m = new MainWindow(ref jobParserClass);
+            this.Hide();
+            m.ShowDialog();
+            this.Show();
+        }
+        void Upate()
+        {
+            var t = jobParserClass.timelyJobs;
+            Title.Text = t.At(position).Title;
+            Description.Text = t.At(position).Description;
+            Type.Content = t.At(position).Type;
+            Amount.Content = t.At(position).Amount;
+
+            position++;
+            if (position >= jobParserClass.timelyJobs.Count())
+                position = 0;
+        }
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Upate();
+        }
+
+        private void Timeline_OnCompleted(object sender, EventArgs e)
+        {
+            ButtonClickRight.Source = new BitmapImage(new Uri(@"R:\WPF\LoginForm\2.png"));
+            var sb = (Storyboard)this.FindResource("MouseOverAnimation");
+            sb.Begin();
+        }
     }
     internal class UrlToImageSourceConverter : IValueConverter
     {
